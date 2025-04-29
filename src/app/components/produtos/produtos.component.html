@@ -1,1 +1,19 @@
-<p>produtos works!</p>
+<div>
+    <h4>Gerar desconto</h4>
+    <div class="container-desconto"> 
+        <label for="porcentagem">% desconto</label>
+        <div class="container-input-btn">
+            <input type="number" id="desconto" [(ngModel)]="descontoPercentual">
+            <button type="button" (click)="produtoComDesconto()">Aplicar</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-produtos">
+    <div class="produto" *ngFor="let produto of arrayDesconto">
+        <p id="prod-name">Nome: {{ produto.nome }}</p>
+        <p>Preço: R$ {{ produto.precoOriginal | number:'1.2-2' }} - com desconto: 
+            R$ {{ produto.precoComDesconto | number:'1.2-2' }}
+        </p>
+    </div>
+</div>

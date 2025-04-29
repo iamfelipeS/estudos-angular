@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ProdutosComponent } from './components/produtos/produtos.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [ProdutosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
