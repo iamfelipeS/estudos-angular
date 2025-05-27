@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-produtos',
+  selector: 'app-desafio-01',
   imports: [CommonModule, FormsModule],
-  templateUrl: './produtos.component.html',
-  styleUrl: './produtos.component.scss'
+  templateUrl: './desafio-01.component.html',
+  styleUrl: './desafio-01.component.scss'
 })
-export class ProdutosComponent implements OnInit{
-  produtos = [
+export class Desafio01Component implements OnInit{
+ produtos = [
     { nome: 'Camisa', preco: 100 },
     { nome: 'Calça', preco: 150 },
     { nome: 'Tênis', preco: 200 }
@@ -22,6 +22,7 @@ export class ProdutosComponent implements OnInit{
   ngOnInit() {
     this.produtoComDesconto(); // ← chama aqui
   }
+
   produtoComDesconto() {
     const fatorDesconto = 1 - this.descontoPercentual / 100;
 

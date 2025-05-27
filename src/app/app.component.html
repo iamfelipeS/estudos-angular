@@ -1,1 +1,59 @@
-<app-produtos />
+<div class="layout">
+  <aside class="sidebar">
+    <h2>Menu</h2>
+    <nav>
+      <details open>
+        <summary>🟩 Manipulação de Dados</summary>
+        <ul>
+          <li>
+            <a routerLink="/manipulacao-dados/desafio-01" routerLinkActive="ativo">
+              Desafio 01 - Produtos com desconto
+              <span class="link-icon">🔗</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/manipulacao-dados/desafio-02" routerLinkActive="ativo">
+              Desafio 02 - Recalcular desconto
+              <span class="link-icon">🔗</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/manipulacao-dados/desafio-03" routerLinkActive="ativo">
+              Desafio 03 - Filtrar produtos
+              <span class="link-icon">🔗</span>
+            </a>
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>🔵 RXJS</summary>
+        <p class="descricao">Desafios futuros com Observables e reatividade.</p>
+      </details>
+
+      <details>
+        <summary>🟠 Signal</summary>
+        <p class="descricao">Desafios futuros para a nova API de Signals.</p>
+      </details>
+    </nav>
+  </aside>
+
+  <main class="conteudo">
+    <section class="hero">
+      <h1>Bem-vindo(a) ao Laboratório de Desafios Angular 🚀</h1>
+      <p>
+        Aqui você encontra exercícios práticos para praticar Angular puro, lógica e UX!
+        Confira cada desafio e compare suas soluções com as minhas.
+      </p>
+    </section>
+
+    <section class="card-conteudo">
+      <router-outlet></router-outlet>
+    </section>
+
+    <footer class="footer">
+      <p>Criado por <a href="https://felipepage.netlify.app/" target="_blank"><b>Felipe Silva</b></a></p>
+      <p><a href="https://github.com/iamfelipeS/estudos-angular" target="_blank">Repositório no GitHub</a></p>
+    </footer>
+  </main>
+</div>
