@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container-input-btn{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.container-resultado{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    gap: 1rem;
+
+    font-weight: bolder;
+    
+}

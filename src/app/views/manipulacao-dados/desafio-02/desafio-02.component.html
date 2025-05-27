@@ -1,1 +1,21 @@
-<p>desafio-02 works!</p>
+<div class="container">
+    <h4>Desafio 02 - Recalcular desconto com valor variável</h4>
+    <div class="container-valor">
+        <label for="valor">Valor do produto</label>
+        <div class="container-input-btn">
+            <input type="number" id="valorProduto" [(ngModel)]="valorProduto">
+        </div>
+    </div>
+    <div class="container-desconto">
+        <label for="porcentagem">% desconto</label>
+        <div class="container-input-btn">
+            <input type="number" id="desconto" maxlength="100" [(ngModel)]="descontoPercentual">
+            <button type="button" (click)="produtoComDesconto()">Aplicar</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-resultado">
+    <label for="resultado">Valor do produto: </label>
+    <span>{{ valorComDesconto | currency: 'BRL' }}</span>
+</div>
