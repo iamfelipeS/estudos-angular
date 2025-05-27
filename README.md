@@ -23,7 +23,7 @@ Este projeto foi criado **para a comunidade DEV**:
 
 | Status | Desafio | Link |
 |:------:|:--------|:-----|
-| ✅ | Desafio 01: Aplicar desconto com `map()` | [Ver desafio](docs/desafio-01-map-produtos.md) |
+| ✅ | Desafio 01: Aplicar desconto com `map()` | [Ver desafio](app/docs/desafio-01-map-produtos.md) |
 | ⏳ | Desafio 02: Recalcular desconto com valor variável | (Em andamento) |
 | ⏳ | Desafio 03: Filtrar produtos por valor mínimo | (Em andamento) |
 | 🚀 | Novos desafios em breve! |
