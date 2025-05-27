@@ -1,21 +1,51 @@
-# Estudos Angular
+# 🚀 Estudos Angular - Desafios para DEV
 
-Repositório para estudos de Angular com foco em manipulação de dados, formulários reativos e práticas reais de projetos.
+Bem-vindo(a) ao repositório **Estudos Angular**!  
+Aqui você encontrará uma série de **desafios práticos** para aprimorar suas habilidades com Angular, Typescript e manipulação de dados no frontend.
 
-## Estrutura dos Estudos
+Este projeto foi criado **para a comunidade DEV**:  
+✅ Você pode tentar resolver cada desafio **antes de ver a solução**  
+✅ Comparar com a minha implementação  
+✅ E evoluir suas práticas com exemplos reais de mercado.
 
-Cada desafio vencido está documentado na pasta [docs/](./docs/).
+---
 
-## Desafios
+## 🎯 Como funciona?
 
-- [x] Desafio 01: Aplicar desconto com `map()` → [Ver desafio](docs/desafio-01-map-produtos.md)
-- [ ] Desafio 02: Recalcular desconto variável
-- [ ] Desafio 03: Filtrar produtos por valor mínimo
-- [ ] Desafio 04: (Próximos desafios)
+- Cada desafio está documentado na pasta [docs/](./docs/).
+- Leia o enunciado do desafio no arquivo correspondente (`docs/desafio-XX.md`).
+- Tente resolver o problema no seu ambiente.
+- Depois, confira minha solução no projeto Angular (código fonte em `/src/app/components/produtos/`).
 
-## Tecnologias
+---
+
+## 📚 Desafios disponíveis
+
+| Status | Desafio | Link |
+|:------:|:--------|:-----|
+| ✅ | Desafio 01: Aplicar desconto com `map()` | [Ver desafio](docs/desafio-01-map-produtos.md) |
+| ⏳ | Desafio 02: Recalcular desconto com valor variável | (Em andamento) |
+| ⏳ | Desafio 03: Filtrar produtos por valor mínimo | (Em andamento) |
+| 🚀 | Novos desafios em breve! |
+
+---
+
+## 💻 Tecnologias usadas
 
 - Angular 19
 - Typescript
-- Formulários reativos
-- Boas práticas de estruturação e componentização
+- HTML / CSS
+- Formulários Reativos
+- Boas práticas de componentização e estrutura
+
+---
+
+## 🤝 Contribua!
+
+Se quiser sugerir novos desafios ou enviar melhorias, fique à vontade para abrir uma issue ou fazer um pull request!  
+**Vamos evoluir juntos! 🚀**
+
+---
+
+> Feito com 💚 para quem acredita que a prática é o melhor caminho para o crescimento.
+
