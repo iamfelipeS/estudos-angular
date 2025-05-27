@@ -1,59 +1,51 @@
-# TokioTreinoArrayForm
+# 🚀 Estudos Angular - Desafios para DEV
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+Bem-vindo(a) ao repositório **Estudos Angular**!  
+Aqui você encontrará uma série de **desafios práticos** para aprimorar suas habilidades com Angular, Typescript e manipulação de dados no frontend.
 
-## Development server
+Este projeto foi criado **para a comunidade DEV**:  
+✅ Você pode tentar resolver cada desafio **antes de ver a solução**  
+✅ Comparar com a minha implementação  
+✅ E evoluir suas práticas com exemplos reais de mercado.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🎯 Como funciona?
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Cada desafio está documentado na pasta [docs/](./docs/).
+- Leia o enunciado do desafio no arquivo correspondente (`docs/desafio-XX.md`).
+- Tente resolver o problema no seu ambiente.
+- Depois, confira minha solução no projeto Angular (código fonte em `/src/app/components/produtos/`).
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📚 Desafios disponíveis
 
-```bash
-ng generate component component-name
-```
+| Status | Desafio | Link |
+|:------:|:--------|:-----|
+| ✅ | Desafio 01: Aplicar desconto com `map()` | [Ver desafio](docs/desafio-01-map-produtos.md) |
+| ⏳ | Desafio 02: Recalcular desconto com valor variável | (Em andamento) |
+| ⏳ | Desafio 03: Filtrar produtos por valor mínimo | (Em andamento) |
+| 🚀 | Novos desafios em breve! |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 💻 Tecnologias usadas
 
-## Building
+- Angular 19
+- Typescript
+- HTML / CSS
+- Formulários Reativos
+- Boas práticas de componentização e estrutura
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🤝 Contribua!
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Se quiser sugerir novos desafios ou enviar melhorias, fique à vontade para abrir uma issue ou fazer um pull request!  
+**Vamos evoluir juntos! 🚀**
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+> Feito com 💚 para quem acredita que a prática é o melhor caminho para o crescimento.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
