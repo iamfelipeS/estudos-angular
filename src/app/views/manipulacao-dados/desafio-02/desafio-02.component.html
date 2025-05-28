@@ -1,5 +1,5 @@
 <div class="container">
-    <h4>Desafio 02 - Recalcular desconto com valor variável</h4>
+    <h2>Desafio 02 - Recalcular desconto com valor variável</h2>
     <div class="container-valor">
         <label for="valor">Valor do produto</label>
         <div class="container-input-btn">
@@ -17,5 +17,5 @@
 
 <div class="container-resultado">
     <label for="resultado">Valor do produto: </label>
-    <span>{{ valorComDesconto | currency: 'BRL' }}</span>
+    <span>R$ {{ valorComDesconto |  number:'1.2-2' }}</span>
 </div>
