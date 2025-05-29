@@ -1,0 +1,79 @@
+<!-- <div class="container"> -->
+    <h1>🛒 Loja de Eletrônicos</h1>
+
+    <!-- Filtros -->
+    <div class="filters">
+        <div class="filter-group">
+            <label for="busca">Buscar produto:</label>
+            <input type="text" id="busca" placeholder="Digite o nome do produto...">
+        </div>
+
+        <div class="filter-group">
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+                <option value="">Todas as categorias</option>
+                <option value="smartphone">Smartphone</option>
+                <option value="notebook">Notebook</option>
+                <option value="audio">Áudio</option>
+                <option value="tablet">Tablet</option>
+                <option value="tv">TV</option>
+                <option value="console">Console</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="marca">Marca:</label>
+            <select id="marca">
+                <option value="">Todas as marcas</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Sony">Sony</option>
+                <option value="Dell">Dell</option>
+                <option value="Nintendo">Nintendo</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="precoMax">Preço máximo:</label>
+            <input type="number" id="precoMax" placeholder="R$ 0,00" step="0.01">
+        </div>
+    </div>
+
+    <!-- Tabela -->
+    <div class="table-container">
+        <table id="tabelaProdutos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Categoria</th>
+                    <th>Marca</th>
+                    <th>Estoque</th>
+                    <th>Avaliação</th>
+                    <th>Cor</th>
+                    <th>Memória</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela">
+                @for (produto of produtos; track $index) {
+                   <tr>
+                        <td>{{ produto.id}}</td>
+                        <td class="produto-nome">{{ produto.nome }}</td>
+                        <td class="preco">{{ produto.preco | currencyBRL }} 
+                        <td class="catgoria">{{ produto.categoria }}</td>
+                        <td>{{ produto.marca }}</td>
+                        <td>{{ produto.estoque }}</td>
+                        <td>{{ produto.avaliacao }}</td>
+                        <td>{{ produto.cor }}</td>
+                        <td>{{ produto.memoria }}</td>
+                   </tr>
+                }<!-- @else {
+                    <div id="semResultados" class="no-results" style="display: none;">
+                        Nenhum produto encontrado com os filtros aplicados.
+                    </div>
+                } -->
+            </tbody>
+        </table>
+    </div>
+<!-- </div> -->
