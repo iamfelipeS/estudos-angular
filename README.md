@@ -25,7 +25,9 @@ Este projeto foi criado **para a comunidade DEV**:
 |:------:|:--------|:-----|
 | ✅ | Desafio 01: Aplicar desconto com `map()` | [Ver desafio](docs/desafio-01-map-produtos.md) |
 | ✅ | Desafio 02: Recalcular desconto com valor variável | [Ver desafio](docs/desafio-02-recalcular-desconto.md) |
-| ⏳ | Desafio 03: Filtrar produtos por valor mínimo | (Em andamento) |
+| ✅ | Desafio 03: Filtrar produtos por valor mínimo | [Ver desafio](docs/desafio-03-filtrar-produtos.md) |
+| ⏳ | Desafio 04: Simulando uma API com Service | (Em andamento) |
+| ⏳ | Desafio 05: 🛒 Tela de Carrinho de Compras | (Em andamento) |
 | 🚀 | Novos desafios em breve! |
 
 ---
