@@ -23,13 +23,12 @@ interface Produto {
 
 
 export class Desafio03Component implements OnInit {
-
   produtos = [
     {
       id: 1,
       nome: "iPhone 15 Pro",
       preco: 8999.99,
-      categoria: "smartphone",
+      categoria: "Smartphone",
       marca: "Apple",
       estoque: 15,
       avaliacao: 4.8,
@@ -40,7 +39,7 @@ export class Desafio03Component implements OnInit {
       id: 2,
       nome: "Samsung Galaxy S24 Ultra",
       preco: 7499.99,
-      categoria: "smartphone",
+      categoria: "Smartphone",
       marca: "Samsung",
       estoque: 23,
       avaliacao: 4.7,
@@ -51,7 +50,7 @@ export class Desafio03Component implements OnInit {
       id: 3,
       nome: "MacBook Pro M3",
       preco: 12999.99,
-      categoria: "notebook",
+      categoria: "Notebook",
       marca: "Apple",
       estoque: 8,
       avaliacao: 4.9,
@@ -62,7 +61,7 @@ export class Desafio03Component implements OnInit {
       id: 4,
       nome: "Dell XPS 13",
       preco: 6899.99,
-      categoria: "notebook",
+      categoria: "Notebook",
       marca: "Dell",
       estoque: 12,
       avaliacao: 4.5,
@@ -73,7 +72,7 @@ export class Desafio03Component implements OnInit {
       id: 5,
       nome: "Sony WH-1000XM5",
       preco: 1899.99,
-      categoria: "audio",
+      categoria: "Audio",
       marca: "Sony",
       estoque: 35,
       avaliacao: 4.6,
@@ -84,7 +83,7 @@ export class Desafio03Component implements OnInit {
       id: 6,
       nome: "iPad Air M2",
       preco: 4299.99,
-      categoria: "tablet",
+      categoria: "Tablet",
       marca: "Apple",
       estoque: 18,
       avaliacao: 4.7,
@@ -95,7 +94,7 @@ export class Desafio03Component implements OnInit {
       id: 7,
       nome: "Samsung TV 65'' QLED 4K",
       preco: 5999.99,
-      categoria: "tv",
+      categoria: "Tv",
       marca: "Samsung",
       estoque: 6,
       avaliacao: 4.4,
@@ -106,7 +105,7 @@ export class Desafio03Component implements OnInit {
       id: 8,
       nome: "PlayStation 5",
       preco: 3999.99,
-      categoria: "console",
+      categoria: "Console",
       marca: "Sony",
       estoque: 10,
       avaliacao: 4.8,
@@ -117,7 +116,7 @@ export class Desafio03Component implements OnInit {
       id: 9,
       nome: "Nintendo Switch OLED",
       preco: 2299.99,
-      categoria: "console",
+      categoria: "Console",
       marca: "Nintendo",
       estoque: 25,
       avaliacao: 4.6,
@@ -128,7 +127,7 @@ export class Desafio03Component implements OnInit {
       id: 10,
       nome: "AirPods Pro 2ª geração",
       preco: 1699.99,
-      categoria: "audio",
+      categoria: "Audio",
       marca: "Apple",
       estoque: 42,
       avaliacao: 4.5,
@@ -137,6 +136,7 @@ export class Desafio03Component implements OnInit {
     }
   ];
 
+  marcas: string[] = [];
   categorias: string[] = [];
   produtosFiltrados: Produto[] = [];
 
@@ -147,17 +147,19 @@ export class Desafio03Component implements OnInit {
     precoMaximo: null
   }
 
-
   ngOnInit(): void {
     this.produtosFiltrados = this.produtos;
     this.categorias = Array.from(new Set(this.produtos.map(produto => produto.categoria)));
+    this.marcas = Array.from(new Set(this.produtos.map(produto => produto.marca)));
   }
 
   aplicarFiltros() {
     this.produtosFiltrados = this.produtos.filter(produto => {
       return (
         (!this.filterOptions.nome || produto.nome.toLocaleLowerCase().includes(this.filterOptions.nome.toLocaleLowerCase())) &&
-        (!this.filterOptions.categoria || produto.categoria.toLocaleLowerCase().includes(this.filterOptions.categoria.toLocaleLowerCase()))
+        (!this.filterOptions.categoria || produto.categoria.toLocaleLowerCase().includes(this.filterOptions.categoria.toLocaleLowerCase())) &&
+        (!this.filterOptions.marca || produto.marca.toLocaleLowerCase().includes(this.filterOptions.marca.toLocaleLowerCase())) &&
+        (!this.filterOptions.precoMaximo || produto.preco <= this.filterOptions.precoMaximo)
       )
     })
 
