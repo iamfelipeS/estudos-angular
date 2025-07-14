@@ -8,7 +8,8 @@
             <input 
                 type="text" 
                 id="busca" 
-                [(ngModel)]="campoProdutos" 
+                autocomplete="off"
+                [(ngModel)]="filterOptions.nome" 
                 placeholder="Digite o nome do produto..."
                 (ngModelChange)="aplicarFiltros()"
             >
@@ -16,14 +17,9 @@
 
         <div class="filter-group">
             <label for="categoria">Categoria:</label>
-            <select id="categoria">
+            <select id="categoria" [(ngModel)]="filterOptions.categoria" (ngModelChange)="aplicarFiltros()">
                 <option value="">Todas as categorias</option>
-                <option value="smartphone">Smartphone</option>
-                <option value="notebook">Notebook</option>
-                <option value="audio">Áudio</option>
-                <option value="tablet">Tablet</option>
-                <option value="tv">TV</option>
-                <option value="console">Console</option>
+                <option *ngFor="let cat of categorias">{{ cat }}</option>
             </select>
         </div>
 

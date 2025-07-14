@@ -24,8 +24,6 @@ interface Produto {
 
 export class Desafio03Component implements OnInit {
 
-  campoProdutos: string = ''
-
   produtos = [
     {
       id: 1,
@@ -139,15 +137,29 @@ export class Desafio03Component implements OnInit {
     }
   ];
 
+  categorias: string[] = [];
   produtosFiltrados: Produto[] = [];
+
+  filterOptions = {
+    nome: '',
+    categoria: '',
+    marca: '',
+    precoMaximo: null
+  }
+
 
   ngOnInit(): void {
     this.produtosFiltrados = this.produtos;
+    this.categorias = Array.from(new Set(this.produtos.map(produto => produto.categoria)));
   }
 
   aplicarFiltros() {
-    this.produtosFiltrados = this.produtos.filter((produto) =>
-      produto.nome.toLocaleLowerCase().includes(this.campoProdutos.toLocaleLowerCase()))
+    this.produtosFiltrados = this.produtos.filter(produto => {
+      return (
+        (!this.filterOptions.nome || produto.nome.toLocaleLowerCase().includes(this.filterOptions.nome.toLocaleLowerCase())) &&
+        (!this.filterOptions.categoria || produto.categoria.toLocaleLowerCase().includes(this.filterOptions.categoria.toLocaleLowerCase()))
+      )
+    })
 
   }
 
