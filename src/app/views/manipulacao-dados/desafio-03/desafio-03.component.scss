@@ -30,6 +30,7 @@ h1 {
 .filter-group {
     display: flex;
     flex-direction: column;
+
     gap: 5px;
 }
 
@@ -54,6 +55,17 @@ select:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
+.btn-limpar {
+    color: brown;
+
+    font-size: small;
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    opacity: 85%;
+}
+//TABELA
 .table-container {
     overflow-x: auto;
     border-radius: 8px;

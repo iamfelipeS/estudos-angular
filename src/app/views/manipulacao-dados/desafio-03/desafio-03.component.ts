@@ -14,8 +14,16 @@ interface Produto {
   cor: string,
   memoria: string | null
 }
+
+interface FilterOptions {
+  nome: string;
+  categoria: string;
+  marca: string;
+  precoMaximo: number | null;
+}
 @Component({
   selector: 'app-desafio-03',
+  standalone: true,
   imports: [CommonModule, FormsModule, PipesModule],
   templateUrl: './desafio-03.component.html',
   styleUrl: './desafio-03.component.scss'
@@ -140,17 +148,27 @@ export class Desafio03Component implements OnInit {
   categorias: string[] = [];
   produtosFiltrados: Produto[] = [];
 
-  filterOptions = {
+  filterOptions: FilterOptions = {
     nome: '',
     categoria: '',
     marca: '',
     precoMaximo: null
   }
 
+  private initialFilterOptions: FilterOptions = {
+    nome: '',
+    categoria: '',
+    marca: '',
+    precoMaximo: null
+  };
+
   ngOnInit(): void {
     this.produtosFiltrados = this.produtos;
     this.categorias = Array.from(new Set(this.produtos.map(produto => produto.categoria)));
     this.marcas = Array.from(new Set(this.produtos.map(produto => produto.marca)));
+
+    // **Salva o estado inicial do filtro.**
+    this.initialFilterOptions = { ...this.filterOptions };
   }
 
   aplicarFiltros() {
@@ -163,6 +181,14 @@ export class Desafio03Component implements OnInit {
       )
     })
 
+  }
+
+  clearFilter() {
+    console.log('chamou clear')
+    this.filterOptions = { ...this.initialFilterOptions };
+
+    // 2. Chama a função de filtro para atualizar a lista
+    this.aplicarFiltros();
   }
 
 }

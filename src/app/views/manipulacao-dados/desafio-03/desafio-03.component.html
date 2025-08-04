@@ -33,12 +33,17 @@
 
         <div class="filter-group">
             <label for="precoMax">Preço máximo:</label>
-            <input type="number" id="precoMax" 
+            <input type="number" id="precoMax" style="width: 4.5rem;" 
                 placeholder="R$ 0,00"
                 [(ngModel)]="filterOptions.precoMaximo" 
                 (ngModelChange)="aplicarFiltros()" 
                 
             >
+        </div>
+        <div class="filter-group">
+            <span class="btn-limpar" (click)="clearFilter()">
+                limpar filtros
+            </span>
         </div>
     </div>
 

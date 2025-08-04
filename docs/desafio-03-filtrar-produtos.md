@@ -14,6 +14,7 @@ Filtrar um array de produtos e exibir apenas os produtos que atendam aos critér
   - Marca (select com opções dinâmicas).
   - Preço máximo.
 - Crie um botão ou evento que aplique a filtragem com base nos critérios selecionados.
+- Crie um botão de "limpar filtros".
 - Mostre apenas os produtos que atendam a todos os critérios.
 - (Opcional) Adicione formatação para o preço em reais (`R$ 99,99`).
 
