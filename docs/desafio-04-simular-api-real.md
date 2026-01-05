@@ -33,20 +33,38 @@ src/
 ## ✅ O que você deve fazer
 
 - Criar os modelos `Product` e `ProductParams` com tipagem correta.
-- Simular um endpoint de listagem (`product.service.ts`) usando `of()` e `delay()`.
-- Filtrar os produtos por nome, categoria e disponibilidade.
-- Ordenar por nome ou preço.
-- Paginar os resultados.
-- Criar o componente `ProductListComponent` para exibir os produtos.
+- Criar o método `buscarProdutosComParametros(params: ProductParams)` no `ProductService`.
+  - ⚠️ Evite sobrescrever métodos usados em desafios anteriores como `getProducts()`.
+- Simular esse método como se fosse uma chamada de API, usando `of()` e `delay()`.
+- Implementar a lógica de filtros: buscar por nome (`search`), por categoria (`category`), e se está disponível (`inStock`).
+- Adicionar ordenação (`sortBy` e `sortDir`) e paginação (`page` e `pageSize`).
+- Criar o componente `ProductListComponent` para exibir os produtos com filtros aplicados.
 - Adicionar botão “Adicionar ao carrinho” (ação simulada, sem lógica real por enquanto).
+
+---
+
+## 🧱 Exemplo de uso do ProductParams
+
+```ts
+export interface ProductParams {
+  search?: string;
+  category?: string;
+  inStock?: boolean;
+  sortBy?: 'name' | 'price';
+  sortDir?: 'asc' | 'desc';
+  page?: number;
+  pageSize?: number;
+}
+```
 
 ---
 
 ## 🧠 Dicas
 
 - Use `filter`, `sort`, `slice` e `map` para simular lógica de backend.
-- Mantenha o array original intacto (nunca mutar o mock direto).
-- Use o botão de “Adicionar ao carrinho” como base para o próximo desafio.
+- Nunca altere o array original do mock diretamente.
+- Deixe o serviço responsável por toda a lógica de manipulação.
+- O botão “Adicionar ao carrinho” servirá de ponte para o Desafio 05.
 
 ---
 
