@@ -1,19 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-desafio-01',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './desafio-01.component.html',
   styleUrl: './desafio-01.component.scss'
 })
-export class Desafio01Component implements OnInit{
- produtos = [
+export class Desafio01Component implements OnInit {
+  produtos = [
     { nome: 'Camisa', preco: 100 },
     { nome: 'Calça', preco: 150 },
     { nome: 'Tênis', preco: 200 }
   ]
+
+  addNoteForm = new FormGroup({
+    title: new FormControl('', Validators.required),
+    text: new FormControl(''),
+  });
 
   arrayDesconto: any[] = [];
 
@@ -35,5 +40,7 @@ export class Desafio01Component implements OnInit{
     }));
   }
 
-  
+submit(){
+  alert("ALOOOO");
+}
 }
