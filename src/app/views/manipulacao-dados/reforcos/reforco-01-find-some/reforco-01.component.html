@@ -1,0 +1,92 @@
+<section class="reforco">
+  <header class="cabecalho">
+    <p class="etiqueta">Manipulação de Dados</p>
+    <h2>Reforço 01 - find e some</h2>
+    <p>Complete os métodos no componente para resolver cada exercício.</p>
+  </header>
+
+  <div class="exercicios">
+    <article class="exercicio">
+      <span class="numero">01</span>
+      <h3>Buscar produto por ID</h3>
+      <p>Informe um ID para localizar o produto correspondente.</p>
+
+      <div class="campo-acao">
+        <label for="produto-id">ID do produto</label>
+        <div class="controles">
+          <input
+            id="produto-id"
+            type="number"
+            min="1"
+            [(ngModel)]="idProduto"
+            placeholder="Ex.: 3"
+          />
+          <button
+            type="button"
+            [disabled]="idProduto <= 0"
+            (click)="buscarProdutoPorId(idProduto)"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+
+      @if (produtoEncontrado; as produto) {
+        <div class="resultado">
+          <strong>{{ produto.nome }}</strong>
+          <span>ID: {{ produto.id }} · Marca: {{ produto.marca }}</span>
+        </div>
+      }
+    </article>
+
+    <article class="exercicio">
+      <span class="numero">02</span>
+      <h3>Verificar estoque</h3>
+      <p>Descubra se existe pelo menos um produto sem estoque.</p>
+
+      <button
+        type="button"
+        (click)="possuiProdutoSemEstoque()"
+      >
+        Verificar estoque
+      </button>
+
+      @if (existeProdutoSemEstoque !== undefined) {
+        <div class="resultado">
+          {{ existeProdutoSemEstoque ? 'Existe produto sem estoque.' : 'Todos os produtos possuem estoque.' }}
+        </div>
+      }
+    </article>
+
+    <article class="exercicio">
+      <span class="numero">03</span>
+      <h3>Verificar marca</h3>
+      <p>Informe uma marca para verificar se ela aparece na lista de produtos.</p>
+
+      <div class="campo-acao">
+        <label for="produto-marca">Marca</label>
+        <div class="controles">
+          <input
+            id="produto-marca"
+            type="text"
+            [(ngModel)]="marca"
+            placeholder="Ex.: Samsung"
+          />
+          <button
+            type="button"
+            [disabled]="!marca.trim()"
+            (click)="possuiProdutoDaMarca(marca)"
+          >
+            Verificar
+          </button>
+        </div>
+      </div>
+
+      @if (existeProdutoDaMarca !== undefined) {
+        <div class="resultado">
+          {{ existeProdutoDaMarca ? 'Marca encontrada.' : 'Marca não encontrada.' }}
+        </div>
+      }
+    </article>
+  </div>
+</section>

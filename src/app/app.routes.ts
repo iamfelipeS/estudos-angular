@@ -17,4 +17,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./views/manipulacao-dados/desafio-03/desafio-03.component').then((m) => m.Desafio03Component),
   },
+  {
+    path: 'manipulacao-dados/reforco-01-find-some',
+    loadComponent: () =>
+      import('./views/manipulacao-dados/reforcos/reforco-01-find-some/reforco-01.component').then(
+        (m) => m.Reforco01Component,
+      ),
+  },
 ];
