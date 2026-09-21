@@ -1,0 +1,62 @@
+/* Estilo para a tag que envelopa o modal inteiro */
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* Garante que fica acima de qualquer outro elemento */
+
+  /* Cria aquele fundo escuro semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* Centraliza a caixinha do modal no meio da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px; /* Espaço entre o header e a lista de produtos */
+}
+
+.modal-header {
+  background-color: azure;
+  border-bottom: solid 1px;
+  border-radius: 5%;
+
+  font-weight: bold;
+}
+
+/* Estilo para a caixinha branca interna do modal */
+.modal-content {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto; /* Adiciona barra de rolagem interna se a lista for longa */
+}
+
+.produtos-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /*
+    repeat(2, ...)
+    → cria duas colunas
+
+    minmax(0, 1fr)
+    → mínimo de 0
+    → máximo de 1 fração do espaço disponível
+
+    Como as duas colunas usam 1fr,
+    elas ficam com o mesmo tamanho.
+  */
+
+  gap: 16px;
+}

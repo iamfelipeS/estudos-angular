@@ -1,0 +1,20 @@
+<div class="modal-content">
+    <div class="header-container">
+
+        <header class="modal-header">
+            Lista de Produtos
+        </header>
+        <button (click)="fecharModal()">Fechar</button> 
+    </div>
+        
+    <ul class="produtos-lista">
+        @for(produto of produtos; track produto.id){
+            <fieldset>
+                <p>{{ produto.nome }}</p>
+                <p><strong>Marca:</strong> <span>{{ produto.marca }}</span></p>
+                <p><strong>Preço:</strong> <span>{{ produto.preco }}</span></p>
+                <p><strong>Estoque:</strong> <span>{{ produto.estoque }}</span></p>
+            </fieldset>
+        }
+    </ul>
+</div>

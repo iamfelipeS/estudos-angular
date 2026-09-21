@@ -5,6 +5,11 @@
     <p>Complete os métodos no componente para resolver cada exercício.</p>
   </header>
 
+  <div class="produtos">
+    <button type="button" class="showProdutos" (click)="showProdutos()">
+      Produtos
+    </button>
+  </div>
   <div class="exercicios">
     <article class="exercicio">
       <span class="numero">01</span>
@@ -14,28 +19,18 @@
       <div class="campo-acao">
         <label for="produto-id">ID do produto</label>
         <div class="controles">
-          <input
-            id="produto-id"
-            type="number"
-            min="1"
-            [(ngModel)]="idProduto"
-            placeholder="Ex.: 3"
-          />
-          <button
-            type="button"
-            [disabled]="idProduto <= 0"
-            (click)="buscarProdutoPorId(idProduto)"
-          >
+          <input id="produto-id" type="number" min="1" [(ngModel)]="idProduto" placeholder="Ex.: 3" />
+          <button type="button" [disabled]="idProduto <= 0" (click)="buscarProdutoPorId(idProduto)">
             Buscar
           </button>
         </div>
       </div>
 
       @if (produtoEncontrado; as produto) {
-        <div class="resultado">
-          <strong>{{ produto.nome }}</strong>
-          <span>ID: {{ produto.id }} · Marca: {{ produto.marca }}</span>
-        </div>
+      <div class="resultado">
+        <strong>{{ produto.nome }}</strong>
+        <span>ID: {{ produto.id }} · Marca: {{ produto.marca }}</span>
+      </div>
       }
     </article>
 
@@ -44,17 +39,14 @@
       <h3>Verificar estoque</h3>
       <p>Descubra se existe pelo menos um produto sem estoque.</p>
 
-      <button
-        type="button"
-        (click)="possuiProdutoSemEstoque()"
-      >
+      <button type="button" (click)="possuiProdutoSemEstoque()">
         Verificar estoque
       </button>
 
       @if (existeProdutoSemEstoque !== undefined) {
-        <div class="resultado">
-          {{ existeProdutoSemEstoque ? 'Existe produto sem estoque.' : 'Todos os produtos possuem estoque.' }}
-        </div>
+      <div class="resultado">
+        {{ existeProdutoSemEstoque ? 'Existe produto sem estoque.' : 'Todos os produtos possuem estoque.' }}
+      </div>
       }
     </article>
 
@@ -66,27 +58,23 @@
       <div class="campo-acao">
         <label for="produto-marca">Marca</label>
         <div class="controles">
-          <input
-            id="produto-marca"
-            type="text"
-            [(ngModel)]="marca"
-            placeholder="Ex.: Samsung"
-          />
-          <button
-            type="button"
-            [disabled]="!marca.trim()"
-            (click)="possuiProdutoDaMarca(marca)"
-          >
+          <input id="produto-marca" type="text" [(ngModel)]="marca" placeholder="Ex.: Samsung" />
+          <button type="button" [disabled]="!marca.trim()" (click)="possuiProdutoDaMarca(marca)">
             Verificar
           </button>
         </div>
       </div>
 
       @if (existeProdutoDaMarca !== undefined) {
-        <div class="resultado">
-          {{ existeProdutoDaMarca ? 'Marca encontrada.' : 'Marca não encontrada.' }}
-        </div>
+      <div class="resultado">
+        {{ existeProdutoDaMarca ? 'Marca encontrada.' : 'Marca não encontrada.' }}
+      </div>
       }
     </article>
   </div>
 </section>
+
+@if(modalAberto()){
+  <!-- <app-modal-produtos [produtos]="produtos"  (modalAberto)="modalAberto = $event"/> -->
+  <app-modal-produtos [produtos]="produtos"  [(modalAberto)]="modalAberto"/>
+}

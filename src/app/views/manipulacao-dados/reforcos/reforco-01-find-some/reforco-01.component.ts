@@ -1,19 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Produto } from '../../../../models/product.model';
 import { ProductService } from '../../../../services/product.service';
+import { ModalProdutos } from '../../modal-produtos/modal-produtos';
 
 @Component({
   selector: 'app-reforco-01',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ModalProdutos],
   templateUrl: './reforco-01.component.html',
   styleUrl: './reforco-01.component.scss',
 })
 export class Reforco01Component implements OnInit {
   produtos: Produto[] = [];
 
+  // modalAberto = false;
+  modalAberto = signal(false);
   idProduto = 0;
   marca = '';
 
@@ -35,14 +38,22 @@ export class Reforco01Component implements OnInit {
   }
 
   buscarProdutoPorId(id: number): void {
-    // TODO: implemente a busca do produto.
+    this.produtoEncontrado = this.produtos.find(produto => produto.id === id);
+    console.log("produtoEncontrado: ", this.produtoEncontrado)
   }
 
   possuiProdutoSemEstoque(): void {
-    // TODO: implemente a verificação de estoque.
+    this.existeProdutoSemEstoque = this.produtos.some(produto => produto.estoque === 0);
+    console.log("existeProdutoSemEstoque: ", this.existeProdutoSemEstoque)
   }
 
   possuiProdutoDaMarca(marca: string): void {
-    // TODO: implemente a verificação da marca.
+    this.existeProdutoDaMarca = this.produtos.some(produto => produto.marca.toLowerCase().trim() === marca.toLowerCase().trim())
+    console.log("existeProdutoDaMarca: ", this.existeProdutoDaMarca)
+  }
+
+  showProdutos() {
+    this.modalAberto.set(true)
+    // this.modalAberto = true;
   }
 }
